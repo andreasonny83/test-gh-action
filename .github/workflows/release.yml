@@ -36,4 +36,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 'Commit'
-        run: git commit origin main
+        run: |
+          git commit
+          git push origin main
