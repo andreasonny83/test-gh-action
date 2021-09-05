@@ -2,7 +2,7 @@ name: Publish
 
 on:
   release:
-    types: [ created ]
+    types: [ published ]
 
 jobs:
   build:
@@ -12,12 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Dump env
+        run: env | sort
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
       - name:  'Publish Version'
         uses: actions/setup-node@v2
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
+      - run: echo {{ version }}
       - run: npm publish --dry-run
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.SNPM_TOKEN }}
