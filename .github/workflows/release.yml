@@ -27,7 +27,7 @@ jobs:
 
       - name: 'Setup Git'
         run: |
-          git config --global user.email "automation@github.com"
+          git config --global user.email "andreasonny83@gmail.com"
           git config --global user.name "GitHub Service"
 
       - name: 'Bump Version'
