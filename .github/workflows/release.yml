@@ -28,7 +28,7 @@ jobs:
       - name: 'Setup Git'
         run: |
           git config --global user.email "andreasonny83@gmail.com"
-          git config --global user.name "GitHub Service"
+          git config --global user.name ${{ github.event.release.author.login }}
 
       - name: 'Bump Version'
         run: npm version ${{ github.event.release.tag_name }}
