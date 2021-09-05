@@ -20,8 +20,10 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 'Env'
-        run: ${{ github }}
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
       - name: 'Setup Git'
         run: |
