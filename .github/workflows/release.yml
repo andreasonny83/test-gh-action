@@ -36,7 +36,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: 'Commit'
-        run: |
-          git commit
-          git push origin main
+      - name: 'Commit version change'
+        run: git push origin main
