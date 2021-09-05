@@ -1,5 +1,10 @@
 {
   "name": "test-gh-action",
+  "description": "testing github actions",
+  "author": {
+    "email": "andreasonny83@gmail.com",
+    "name": "andreasonny83"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT"
