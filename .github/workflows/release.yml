@@ -20,8 +20,8 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 'Setup Git'
-        run: env | sort
+      - name: 'Env'
+        run: ${{ github }}
 
       - name: 'Setup Git'
         run: |
